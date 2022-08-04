@@ -43,7 +43,7 @@ int _strlen(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		continues;
+		continue;
 	}
 	return (i);
 }
@@ -64,12 +64,17 @@ int _atoi(char *s)
 			x *= -1;
 		i++;
 	}
+	j = i;
+	while ((s[j] >= '0') && (s[j] <= '9'))
+	{
+		n = (n * 10) + x * ((s[j]) - '0');
+		j++;
+	}
 	return (n);
 }
 /**
  * _puts - prints a string
  * @str: pointer to character
- * Return: void
  */
 void _puts(char *str)
 {
@@ -80,5 +85,4 @@ void _puts(char *str)
 		_putchar(str[i]);
 	}
 	_putchar('\n');
-	return (0);
 }
