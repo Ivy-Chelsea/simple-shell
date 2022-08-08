@@ -1,8 +1,10 @@
 <h1>Simple Shell</h1>
 <h2>Description</h2>
-<p>This shell project done by Ivy and Anna will demonstrate how a simple UNIX command interpreter was created. </p>
+<p>This shell project done by Ivy and Anna will demonstrate how a simple UNIX command interpreter was created.</p>
 <h2>Compiling requirements:</h2>
 <p>gcc -Wall -Werror -Wextra -pedantic -std=gnu89</p>
+<h2>Output requirements:</h2>
+<p>The program must have the exact same output as sh (/bin/sh) as well as the exact same error output.</p>
 <h2>Allowed functions:</h2>
 <ol>
 <li>access</li>
@@ -36,3 +38,22 @@
 <li>wait4</li>
 <li>write</li>
 <ol>
+<h2>How the program should work in interactive mode:</h2>
+<p>$ ./hsh</p>
+<p>($) /bin/ls</p> 
+<p>hsh main.c shell.c</p>
+<p>($)</p>
+<p>($) exit</p>
+<p>$</p>
+<h2>How the program should work in non-interactive mode:</h2>
+<p>$ echo "/bin/ls" | ./hsh</p>
+<p>hsh main.c shell.c test_ls_2</p>
+<p>$</p>
+<p>$ cat test_ls_2</p>
+<p>/bin/ls</p>
+<p>/bin/ls</p>
+<p>$</p>
+<p>$ cat test_ls_2 | ./hsh</p>
+<p>hsh main.c shell.c test_ls_2</p>
+<p>hsh main.c shell.c test_ls_2</p>
+<p>$</p>
