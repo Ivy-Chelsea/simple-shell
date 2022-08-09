@@ -12,7 +12,7 @@ extern char **environ;
 #define PRINTER(c) (write(STDOUT_FILENO, c, _strlen(c)))
 
 /**###### LIBS USED ######*/
-
+#include <string.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
