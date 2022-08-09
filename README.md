@@ -5,6 +5,15 @@
 <p>gcc -Wall -Werror -Wextra -pedantic -std=gnu89</p>
 <h2>Output requirements:</h2>
 <p>The program must have the exact same output as sh (/bin/sh) as well as the exact same error output.</p>
+<h2>How the program should work in interactive mode:</h2>
+<ul>
+<li>$ ./hsh</li>
+<li>($) /bin/ls</li>
+<li>hsh main.c shell.c</li>
+<li>($)</li>
+<li>($) exit</li>
+<li>$</li>
+<ul>
 <h2>How the program should work in non-interactive mode:</h2>
 <p>$ echo "/bin/ls" | ./hsh</p>
 <p>hsh main.c shell.c test_ls_2</p>
@@ -50,6 +59,9 @@
 <li>wait4</li>
 <li>write</li>
 <ol>
-<h2>How the program should work in non-interactive mode:</p>
+<h2>The program requirements:</h2>
+<ol>
+<li>Write a UNIX command line interpreter.</li>
+</ol>
 <h2>How the program should work in interactive mode:</h2>
 <h2>How the program should work in non-interactive mode:</h2>
