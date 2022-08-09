@@ -6,13 +6,12 @@
 <h2>Output requirements:</h2>
 <p>The program must have the exact same output as sh (/bin/sh) as well as the exact same error output.</p>
 <h2>How the program should work in interactive mode:</h2>
-<p>
-<code>$ ./hsh<br>
+<p>$ ./hsh<br>
 ($) /bin/ls<br>
 hsh main.c shell.c<br>
 ($)<br>
 ($) exit<br>
-$</code>
+$<br>
 </p>
 <h2>How the program should work in non-interactive mode:</h2>
 <p>$ echo "/bin/ls" | ./hsh</p>
