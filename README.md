@@ -14,17 +14,18 @@ hsh main.c shell.c<br>
 $<br>
 </p>
 <h2>How the program should work in non-interactive mode:</h2>
-<p>$ echo "/bin/ls" | ./hsh</p>
-<p>hsh main.c shell.c test_ls_2</p>
-<p>$</p>
-<p>$ cat test_ls_2</p>
-<p>/bin/ls</p>
-<p>/bin/ls</p>
-<p>$</p>
-<p>$ cat test_ls_2 | ./hsh</p>
-<p>hsh main.c shell.c test_ls_2</p>
-<p>hsh main.c shell.c test_ls_2</p>
-<p>$</p>
+<p>$ echo "/bin/ls" | ./hsh<br>
+hsh main.c shell.c test_ls_2<br>
+$<br>
+$ cat test_ls_2<br>
+/bin/ls<br>
+/bin/ls<br>
+$<br>
+$ cat test_ls_2 | ./hsh<br>
+hsh main.c shell.c test_ls_2<br>
+hsh main.c shell.c test_ls_2<br>
+$<br>
+</p>
 <h2>Allowed functions:</h2>
 <ol>
 <li>access</li>
