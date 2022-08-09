@@ -58,10 +58,12 @@ $<br>
 <li>wait3</li>
 <li>wait4</li>
 <li>write</li>
-<ol>
-<h2>The program requirements:</h2>
+</ol>
+<h2>Program requirements:</h2>
 <ol>
 <li>Write a UNIX command line interpreter.</li>
-</ol>
-<h2>How the program should work in interactive mode:</h2>
-<h2>How the program should work in non-interactive mode:</h2>
+<li>The interpreter should handle command lines with arguments</li>
+<li>It should handle the PATH and fork must not be called if the command doesn’t exist</li>
+<li>Implement the exit built-in, that exits the shell</li>
+<li>Implement the env built-in, that prints the current environment</li>
+<ol>
