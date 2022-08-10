@@ -64,7 +64,7 @@ int check_cmd(char **cmd, char *input, int c, char **argv)
 
 		if (execve(*cmd, cmd, environ) == -1)
 		{
-		        print_error(cmd[0], c, argv);
+			print_error(cmd[0], c, argv);
 			free(input);
 			free(cmd);
 			exit(EXIT_FAILURE);
