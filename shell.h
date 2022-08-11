@@ -1,18 +1,18 @@
-#ifndef SHELLH
-#define SHELLH
+#ifndef _SHELL_H_
+#define _SHELL_H_
 
 /**###### environ var ######*/
 
 extern char **environ;
 
-/**##### MACROS #####*/
+/**##### MACROS ######*/
 
 #define BUFSIZE 1024
 #define DELIM " \t\r\n\a"
 #define PRINTER(c) (write(STDOUT_FILENO, c, _strlen(c)))
 
 /**###### LIBS USED ######*/
-#include <string.h>
+
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -24,6 +24,7 @@ extern char **environ;
 #include <fcntl.h>
 #include <errno.h>
 #include <linux/limits.h>
+
 
 
 
@@ -48,44 +49,61 @@ char *_strchr(char *s, char c);
 int _strncmp(const char *s1, const char *s2, size_t n);
 char *_strdup(char *str);
 
-/**###### MEMORIE MANDMENT ####*/
+/**###### MEMORY MANGEMENT ####*/
+
+void free_env(char **env);
+void *fill_an_array(void *a, int el, unsigned int len);
+char *_memcpy(char *dest, char *src, unsigned int n);
+void *_calloc(unsigned int size);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void free_all(char **input, char *line);
+
+/**###### INPUT Function ######*/
 
 void prompt(void);
 void signal_to_handel(int sig);
 char *_getline(void);
 
-/**###### Command parser and extractor ###*/
+/** ###### Command parser and extractor ###*/
 
-int path_cmd(char **lie);
+int path_cmd(char **line);
 char *_getenv(char *name);
 char **parse_cmd(char *cmd);
 int handle_builtin(char **cmd, int er);
 void read_file(char *filename, char **argv);
 char *build(char *token, char *value);
 int check_builtin(char **cmd);
-void create_envi(char **envi);
+void creat_envi(char **envi);
 int check_cmd(char **tokens, char *line, int count, char **argv);
 void treat_file(char *line, int counter, FILE *fd, char **argv);
 void exit_bul_for_file(char **cmd, char *line, FILE *fd);
 
-/** #### BUL FUNC #####*/
+/** ####BUL FUNC #####*/
+
 void hashtag_handle(char *buff);
 int history(char *input);
 int history_dis(char **cmd, int er);
 int dis_env(char **cmd, int er);
+int change_dir(char **cmd, int er);
 int display_help(char **cmd, int er);
 int echo_bul(char **cmd, int er);
-void exit_bul(char **cmd, char *input, char **argv, int c);
+void  exit_bul(char **cmd, char *input, char **argv, int c);
 int print_echo(char **cmd);
+
+/** ####error handle and Printer ####*/
+void print_number(unsigned int n);
+void print_number_in(int n);
+void print_error(char *line, int c, char **argv);
+void _prerror(char **argv, int c, char **cmd);
 
 
 /**
- * struct bulltin - contain bultin to handle and function to execute
- * @command: pointer to char
- * @fun: fun to exercute when bultin true
+ * struct bulltin - contain bultin to handle and function to excute
+ * @command:pointer to char
+ * @fun:fun to excute when bultin true
  */
 
-typedef struct bulltin
+typedef struct  bulltin
 {
 	char *command;
 	int (*fun)(char **line, int er);
